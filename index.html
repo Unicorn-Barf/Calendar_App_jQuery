@@ -18,7 +18,10 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <!-- jQuery css stylesheet -->
+    <link rel="stylesheet" href="./assets/css/jquery.css">
+    <!-- My stylesheet -->
+    <link rel="stylesheet" href="./Assets/css/style.css" />
     <title>Work Day Scheduler</title>
   </head>
 
@@ -26,13 +29,74 @@
     <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
+      <!-- Moment.js display of current day and time -->
       <p id="currentDay" class="lead"></p>
     </header>
+
+    <!-- container for schedule -->
     <div class="container">
-      <!-- Timeblocks go here -->
+
+      <!-- Table For Schedule -->
+      <table class="table col-12 w-100">
+        <tbody>
+          <tr class="row" id="9am">
+            <td class="col-1 timeblock hour">9 am</td>
+            <td class="col-10" data-when="present"><input type="text" id="events"></td>
+            <td class="col-1"><button type="button" id="saveBtn" class="btn">Save</button></td>
+          </tr>
+          <tr class="row col-12" id="10am" data-when="current">
+            <td>10 am</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="row col-12" id="11am" data-when="current">
+            <td>11 am</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="row col-12" id="12pm" data-when="current">
+            <td>12 pm</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="row col-12" id="1pm" data-when="current">
+            <td>1 pm</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="row col-12" id="2pm" data-when="current">
+            <td>2 pm</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="row col-12" id="3pm" data-when="current">
+            <td>3 pm</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="row col-12" id="4pm" data-when="current">
+            <td>4 pm</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="row col-12" id="5pm" data-when="current">
+            <td>5 pm</td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
     </div>
 
+    <!-- jQuery Ui Script -->
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"
+      integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous"></script>
+    <!-- jQuery Script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Moment.js Script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <!-- My Script -->
+    <script src="./Assets/js/script.js"></script>
   </body>
 </html>
