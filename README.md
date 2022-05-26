@@ -22,9 +22,9 @@
 ​
 ### The challenge
 ​
-Create a simple calendar application that allows a user to save events for each hour of the day by modifying starter code. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
+The "Work Day Scheduler App" is a basic workday scheduling application.  The project began with starter code and needing to be completed to allow for satisfactory functionality and seamless appearance.  The application runs in the browser and utlizes dynamically updated HTML and CSS using jQuery.
 
-You'll need to use the [Moment.js](https://momentjs.com/) library to work with date and time. Be sure to read the documentation carefully and concentrate on using Moment.js in the browser.
+Much of the functionality relies on the effective use of Moment.js to update time tile colors and display the current date.
 ​
 ### User Story
 ​
@@ -54,15 +54,9 @@ THEN the saved events persist
 ​
 ### Screenshot
 ​
-![](./screenshot.jpg)
+![Web Functionality](./Assets/images/webFunction.gif)
 ​
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-​
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
-​
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-​
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+
 ​
 ### Links
 ​

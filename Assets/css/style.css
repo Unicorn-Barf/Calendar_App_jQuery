@@ -78,6 +78,11 @@ textarea {
   transition: all 0.3s ease-in-out;
 }
 
+/* change savebutton png color to white */
+.btn img {
+  filter: invert(100%);
+}
+
 /* events input */
 #events {
   border: none;
