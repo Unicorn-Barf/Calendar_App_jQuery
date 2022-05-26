@@ -15,9 +15,9 @@ function updateCards() {
         let tileArr = $("[id=events]");
         for (i = 0; i < tileArr.length; i++) {
             // get moment hour in H a format
-            let currentHour = moment().format('H');
-            let hourId = $(tileArr[i]).parent().attr('data-time');
-            console.log(currentHour, hourId);
+            let currentHour = parseInt(moment().format('H'));
+            let hourId = $(tileArr[i]).parent().data('time');
+            console.log(typeof currentHour, typeof hourId);
             // check if current tile element matches time
             if (hourId === currentHour) {
                 $(tileArr[i]).parent().attr("data-when", "present");
@@ -29,7 +29,6 @@ function updateCards() {
                 $(tileArr[i]).parent().attr("data-when", "future");
             }
         }
-
     }(), 30000);
 };
 
@@ -37,10 +36,7 @@ function updateCards() {
 $('.container').on("click", "button", function (event) {
     let btnEl = event.target;
     // get value from input
-    let events = $('#events', $(this).closest("div.row")).val();
-    // why not this?
-    // let events = $(btnEl).siblings(".col-10").val();
-
+    let events = $('#events', $(this).closest("div.row")).val().trim();
     // save parent id for storage
     let parentId = $(btnEl).parent().attr('id');
     // Call local storage function
