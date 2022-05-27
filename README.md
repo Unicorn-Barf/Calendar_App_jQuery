@@ -56,64 +56,75 @@ THEN the saved events persist
 ​
 ![Web Functionality](./Assets/images/webFunction.gif)
 ​
-
-​
 ### Links
 ​
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/Unicorn-Barf/Workday_Scheduling_App](https://github.com/Unicorn-Barf/Workday_Scheduling_App)
+- Live Site URL: [https://unicorn-barf.github.io/Workday_Scheduling_App/](https://unicorn-barf.github.io/Workday_Scheduling_App/)
 ​
 ## My process
 ​
 ### Built with
 ​
-- Semantic HTML5 markup
+- HTML5
 - CSS
+- jQuery
+- Moment.js
+- Bootstrap
 ​
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+
 ​
 ### What I learned
 ​
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-​
-To see how you can add code snippets, see below:
-​
+While working on this project I learned a few new concepts.  First, I learned a new method to target HTML elements using jQuery, `closest()`.  Here is an example of how I employed this method:
+```js
+// get value from input trim leading/trailing whitespaces
+let events = $('#events', $(this).closest("div.row")).val().trim();
+// save parent id for object key name
+let parentId = $(btnEl).closest("div.row").attr('id');
+```
+This was a valuable tool to learn because I had trouble with two user action cases on my event listener.  The user could possible click the `<button>` element or the `<img>` element inside it.  Regardless of the case I needed to access the node of the closest `<div>` with the class of "row".  Using `closest()` gave me a way to directly access my desired element regardless of which element the user specifically clicked on.
+
+Another interesting issue that arrose was types of data and how to compare them.  I needed to tell the code when to change the background colors of the tiles depending on the current time.  The code I utilized to get the Moment.js current hour data was giving me a string.  I could get the data attribute from the `<div>` parent element of my `<input>` element which returned a number.  In order to use conditional statements and effectively compared the values, I needed them both as a number.  Here was my solution using `parseInt()`:
+```js
+let currentHour = parseInt(moment().format('H'));
+let hourId = $(tileArr[i]).parent().data('time');
+```
+
+The last concept I learned about was how to utilize Bootstrap classes to easily format my project.  Here is an example of using the "row" and "col" classes to quickly create dynamically capable sizing for a grid of schedule tiles:
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<!-- Schedule cards -->
+<div class="row" id="9am">
+    <div class="col-1 timeblock hour">9 am</div>
+    <div class="col-10" data-when="past" data-time="9"><input type="textid="events"></div>
+    <button type="button" id="saveBtn" class="btn col-1"><img src="./Assets/imagesaveBtn.png"></button>
+</div>
 ```
+This saved time over having to create and define flexbox properies on my own using css.
 ​
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
 ​
-If you want more help with writing markdown, check out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-​
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+
 ​
 ### Continued development
 ​
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-​
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+I have realized throughout this project there are many ways to code.  In particular, there are numberous methods for targeting elements efficiently and effectively.  I want to continue to learn and understand these so I can more fluently manipulate the elements and data that I need to target.
+
+In addition, Boostrap is a new and fun tool for me.  I haven't yet fully realized its complete scope and power; I look forward to experimenting with all it has to offer.
+
+Lastly, I plan on using Moment.js and similar APIs to work on using time not only for displaying but also as a tool to add better functionality and greater UX to my applications.
 ​
 ### Useful resources
 ​
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-​
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [Stackoverflow jQuery element id selector](https://stackoverflow.com/questions/902839/how-to-select-all-elements-with-a-particular-id-in-jquery) - This question on stackoverflow refreshed my memory on getting an element by id with jQuery.
+- [css-tricks: data attributes](https://css-tricks.com/a-complete-guide-to-data-attributes/#styling) - A very cool guide to data attributes and how to utilize them in CSS.  This helped me dynamically style elements using data attributes.
+- [Guide to Event Handling](https://eloquentjavascript.net/15_event.html) - This was a helpful reference for information and examples about event handlers.
+
 ​
 ## Author
 ​
-- Website - [Add your name here](https://www.your-site.com)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Website - [Nolan Spence](https://unicorn-barf.github.io/Portfolio_Website_HTML_CSS/)
+- LinkedIn - [https://www.linkedin.com/in/aerospence/](https://www.linkedin.com/in/aerospence/)
 ​
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
 ​
 ## Acknowledgments
 ​
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-​
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+Thank you to my tutor, Jacob Nordan, for helping me through my codeblindness to fix my data types.
